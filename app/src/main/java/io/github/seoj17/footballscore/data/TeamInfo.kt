@@ -1,6 +1,6 @@
 package io.github.seoj17.footballscore.data
 
-data class HomeTeam(
+data class TeamInfo(
     val crest: String,
     val id: Int,
     val name: String,
