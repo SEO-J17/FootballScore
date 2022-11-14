@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">FootballScore</string>
-    <string name="separator">:</string>
+    <string name="home_team_info">Home팀</string>
+    <string name="away_team_info">Away팀</string>
+    <string name="squad_info">스쿼드</string>
+    <string name="info_separator">|</string>
+    <string name="info_team">팀 정보</string>
+    <string name="position_title">리그 순위</string>
+    <string name="running_competition">참가 중인 대회</string>
+    <string name="team_web">구단 홈페이지</string>
+    <string name="score_separator">:</string>
 </resources>
