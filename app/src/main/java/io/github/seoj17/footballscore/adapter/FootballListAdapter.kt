@@ -5,10 +5,10 @@ import androidx.recyclerview.widget.RecyclerView
 
 class FootballListAdapter(
     private val dataSet: List<String> = listOf(),
-) : RecyclerView.Adapter<ListViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ListViewHolder(parent)
+) : RecyclerView.Adapter<MatchViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MatchViewHolder(parent)
 
-    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MatchViewHolder, position: Int) {
         with(holder){
             bind(dataSet[position])
         }
