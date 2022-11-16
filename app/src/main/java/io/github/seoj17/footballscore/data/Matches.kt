@@ -3,7 +3,7 @@ package io.github.seoj17.footballscore.data
 data class Matches(
     val awayTeam: TeamInfo,
     val competition: Competition,
-    val group: Any?,
+    val group: String?,
     val homeTeam: TeamInfo,
     val id: Int,
     val lastUpdated: String,
