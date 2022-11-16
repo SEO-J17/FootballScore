@@ -1,5 +1,6 @@
 package io.github.seoj17.footballscore.network
 
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -12,9 +13,19 @@ object FootballService {
     private const val TIME_OUT = 10000L
     private val interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
+    private val authInterceptor = Interceptor { chain ->
+        chain.proceed(
+            chain.request()
+                .newBuilder()
+                .addHeader("X-Auth-Token", AUTH_TOKEN)
+                .build()
+        )
+    }
+
     private val client =
         OkHttpClient.Builder()
             .addInterceptor(interceptor)
+            .addInterceptor(authInterceptor)
             .connectTimeout(TIME_OUT, TimeUnit.MILLISECONDS)
             .build()
 
@@ -27,6 +38,6 @@ object FootballService {
 
     private val api = requestObject.create(FootballAPI::class.java)
 
-    suspend fun getMatchesInfo() = api.getMatches(AUTH_TOKEN)
+    suspend fun getMatchesInfo() = api.getMatches()
 
 }
