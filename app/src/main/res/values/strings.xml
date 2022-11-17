@@ -7,7 +7,7 @@
     <string name="info_separator">|</string>
     <string name="info_team">팀 정보</string>
     <string name="position_title">리그 순위</string>
-    <string name="running_competition">참가 중인 대회</string>
     <string name="team_web">구단 홈페이지</string>
     <string name="score_separator">:</string>
+    <string name="home_address">홈 구장 주소</string>
 </resources>
