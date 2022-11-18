@@ -11,5 +11,5 @@ interface FootballAPI {
     suspend fun getMatches(): FootballInfo
 
     @GET("/v4/teams/{id}")
-    suspend fun getTeamInfo(@Path("id") id: String): TeamDetail
+    suspend fun getTeamInfo(@Path("id") id: Int): TeamDetail
 }
