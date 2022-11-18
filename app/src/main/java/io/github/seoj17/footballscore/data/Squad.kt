@@ -6,4 +6,18 @@ data class Squad(
     val name: String,
     val nationality: String,
     val position: String
-)
+) {
+    companion object {
+        operator fun invoke(detailTeam: Squad): Squad {
+            return with(detailTeam) {
+                Squad(
+                    dateOfBirth,
+                    id,
+                    name,
+                    nationality,
+                    position
+                )
+            }
+        }
+    }
+}
