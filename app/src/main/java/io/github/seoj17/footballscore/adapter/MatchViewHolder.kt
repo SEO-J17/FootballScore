@@ -3,9 +3,9 @@ package io.github.seoj17.footballscore.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import io.github.seoj17.footballscore.data.Matches
 import io.github.seoj17.footballscore.databinding.ViewHolderMatchBinding
+import io.github.seoj17.footballscore.extensions.imageLoad
 import io.github.seoj17.footballscore.utils.StatusSet
 
 class MatchViewHolder(
@@ -13,14 +13,14 @@ class MatchViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(matches: Matches) {
         with(binding) {
-            Glide.with(root.rootView.context).load(matches.homeTeam.crest).into(homeTeam)
+            homeTeam.imageLoad(matches.homeTeam.crest)
             homeName.text = matches.homeTeam.shortName
             homeScore.text = matches.score.fullTime.home?.toString() ?: StatusSet.DEFAULT_SCORE
 
             gameStatus.text = StatusSet.getStatus(matches.status)
             leagueName.text = matches.competition.code
 
-            Glide.with(root.rootView.context).load(matches.awayTeam.crest).into(awayTeam)
+            awayTeam.imageLoad(matches.awayTeam.crest)
             awayName.text = matches.awayTeam.shortName
             awayScore.text = matches.score.fullTime.away?.toString() ?: StatusSet.DEFAULT_SCORE
 
