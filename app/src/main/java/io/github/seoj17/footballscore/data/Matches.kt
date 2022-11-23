@@ -13,6 +13,24 @@ data class Matches(
     val status: String,
     val utcDate: String,
 ) {
+
+    fun getState(): String {
+        return when (status) {
+            "TIMED" -> {
+                "진행중"
+            }
+            "FINISHED" -> {
+                "종료"
+            }
+            "SCHEDULED " -> {
+                "예정"
+            }
+            else -> {
+                "취소"
+            }
+        }
+    }
+
     companion object {
         operator fun invoke(matchesData: Matches): Matches {
             return with(matchesData) {
