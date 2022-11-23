@@ -15,14 +15,14 @@ class MatchViewHolder(
         with(binding) {
             homeTeam.imageLoad(matches.homeTeam.crest)
             homeName.text = matches.homeTeam.shortName
-            homeScore.text = matches.score.fullTime.home?.toString() ?: StatusSet.DEFAULT_SCORE
+            homeScore.text = "${matches.score.fullTime.getHomeScore()}"
 
-            gameStatus.text = StatusSet.getStatus(matches.status)
+            gameStatus.text = matches.getState()
             leagueName.text = matches.competition.code
 
             awayTeam.imageLoad(matches.awayTeam.crest)
             awayName.text = matches.awayTeam.shortName
-            awayScore.text = matches.score.fullTime.away?.toString() ?: StatusSet.DEFAULT_SCORE
+            awayScore.text = "${matches.score.fullTime.getAwayScore()}"
 
         }
     }
