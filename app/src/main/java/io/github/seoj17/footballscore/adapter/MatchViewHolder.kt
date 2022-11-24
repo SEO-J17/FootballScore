@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import io.github.seoj17.footballscore.data.Matches
 import io.github.seoj17.footballscore.databinding.ViewHolderMatchBinding
 import io.github.seoj17.footballscore.extensions.imageLoad
-import io.github.seoj17.footballscore.utils.StatusSet
 
 class MatchViewHolder(
     private val binding: ViewHolderMatchBinding,
