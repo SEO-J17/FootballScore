@@ -46,5 +46,5 @@ object FootballService {
     private val api = requestObject.create(FootballAPI::class.java)
 
     suspend fun getMatchesInfo() = api.getMatches()
-    suspend fun getDetailTeamInfo() = api.getTeamInfo(999999)
+    suspend fun getDetailTeamInfo(id: Int) = api.getTeamInfo(id)
 }
